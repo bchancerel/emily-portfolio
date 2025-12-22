@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData('home', () =>
-  queryCollection('content').path('/').first()
-)
+    const { data: home } = await useAsyncData('home', () =>
+        queryCollection('home').path('/').first()
+    )
 
-if (!home.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Home content not found',
-    fatal: true,
-  })
-}
+    if (!home.value) {
+        throw createError({
+            statusCode: 404,
+            statusMessage: 'Home content not found',
+            fatal: true,
+        })
+    }
 </script>
 
 <template>

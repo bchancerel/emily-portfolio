@@ -1,0 +1,74 @@
+title: "Petite timeline de ma vie"
+items:
+  - year: "10/05/2000"
+    title: "Naissance"
+    place: "À Alès"
+    icon: "spark"
+
+  - year: "2000–2008"
+    title: "Enfance"
+    place: "Je grandis à Bagnols-sur-Cèze jusqu'à mes 8 ans"
+    icon: "home"
+
+  - year: 2008
+    title: "Déménagement en Guadeloupe"
+    place: "Je pars vivre 5 ans sous le soleil"
+    icon: "sun"
+
+  - year: 2013
+    title: "Retour en métropole"
+    place: "Direction Meaux, un changement drastique"
+    icon: "city"
+
+  - year: 2016
+    title: "Déménagement à Saint-Étienne"
+    place: "Je découvre un attrait pour l'art et commence à dessiner"
+    icon: "palette"
+
+  - year: 2017
+    title: "Stage au Musée Gustave Moreau"
+    place: "Acceptée pour mon stage de 1ère au musée à Paris, une expérience inoubliable"
+    icon: "museum"
+
+  - year: 2018
+    title: "Baccalauréat"
+    place: "BAC Littéraire obtenu avec mention Bien – acceptée en école d'hôtellerie-restauration en alternance"
+    icon: "graduation"
+
+  - year: "Juillet 2018"
+    title: "Formation en restauration"
+    place: "Début à l'Auberge de Fontjoncouse (3 étoiles), puis réorientation"
+    icon: "cloche"
+
+  - year: "Septembre 2018"
+    title: "Licence LEA"
+    place: "Anglais & Espagnol"
+    icon: "book"
+
+  - year: 2021
+    title: "Diplôme de licence"
+    place: "Mention Bien – je poursuis en Mastère en alternance"
+    icon: "study"
+
+  - year: "Septembre 2021"
+    title: "Marketing & Communication"
+    place: "Début de mon parcours en alternance chez Eventyr comme Chargée de communication"
+    icon: "chat"
+
+  - year: 2023
+    title: "Lancement en freelance"
+    place: "Premiers contrats, premier gros client, salon à New York"
+    icon: "rocket"
+
+  - year: 2024
+    title: "Épanouissement pro & perso"
+    place: "
+      Plusieurs clients en simultané, changement d'appartement,
+      voyage solo en Corée du Sud, projets Japon,
+      je suis diplômée !"
+    icon: "world"
+
+  - year: "Aujourd'hui"
+    title: "Nouvelle étape"
+    place: "Je crée mon site et suis en quête de nouvelles opportunités professionnelles"
+    icon: "handshake"

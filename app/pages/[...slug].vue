@@ -10,7 +10,7 @@
     const path = computed(() => '/' + slug.value.join('/'))
 
     const { data: page } = await useAsyncData(path.value, () =>
-        queryCollection('content').path(path.value).first()
+        queryCollection('home').path(path.value).first()
     )
 
     if (!page.value) {

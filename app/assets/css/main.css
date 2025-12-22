@@ -48,10 +48,89 @@ body { font-feature-settings: "ss01" on, "liga" on; }
   background-repeat: repeat;
   background-size: 110px 110px;
 
-  opacity: 0.05;
+  opacity: 0.07;
   filter: blur(0.2px);
 
   -webkit-mask-image: radial-gradient(circle at 50% 35%, transparent 0 40%, black 70%);
   mask-image: radial-gradient(circle at 50% 35%, transparent 0 40%, black 70%);
 }
+
+@keyframes dotPing {
+  0%   { transform: scale(1); opacity: .55; }
+  70%  { transform: scale(2.2); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes dotBreathe {
+  0%, 100% { transform: scale(1); opacity: .0; }
+  40%      { transform: scale(1.8); opacity: .25; }
+  70%      { transform: scale(1.2); opacity: .12; }
+}
+
+.group-hover\:animate-dot-ping { animation: dotPing 1.6s cubic-bezier(0,0,0.2,1) infinite; }
+.group-hover\:animate-dot-breathe { animation: dotBreathe 1.9s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .group-hover\:animate-dot-ping,
+  .group-hover\:animate-dot-breathe {
+    animation: none !important;
+  }
+}
+
+/* ===== Scrollbar ===== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    color-mix(in oklab, var(--rose) 70%, var(--ink))
+    transparent;
+}
+
+/* Chromium / Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--rose) 65%, transparent);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--rose) 85%, transparent);
+}
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px; 
+  z-index: 9999;
+  background: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+.scroll-indicator__bar {
+  height: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--rose) 100%, #ff004c),
+    color-mix(in oklab, var(--olive) 100%, #e5ff00)
+  );
+
+  box-shadow:
+    0 0 16px color-mix(in oklab, var(--rose) 70%, transparent);
+
+  transition: transform 0.15s ease-out;
+}
+
 

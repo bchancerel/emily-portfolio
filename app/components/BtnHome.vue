@@ -1,7 +1,7 @@
 <template>
     <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a
-            href="#about"
+        <NuxtLink
+            to="/about"
             class="
                 group
                 relative
@@ -29,9 +29,9 @@
             <span class="relative z-10">À propos de moi</span>
 
             <span class="absolute inset-0 rounded-full bg-white/20 opacity-0 blur transition-opacity duration-300 group-hover:opacity-100"/>
-        </a>
-        <a
-            href="#contact"
+        </NuxtLink>
+        <NuxtLink
+            to="#contact"
             class="
                 group
                 relative
@@ -64,7 +64,7 @@
                 Me contacter
                 <span class="absolute -bottom-1 left-0 h-[1px] w-0 bg-[var(--ink)] transition-all duration-300 group-hover:w-full"/>
             </span>
-        </a>
+        </NuxtLink>
 
     </div>
 </template>
