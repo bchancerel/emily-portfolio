@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "@tailwindcss/typography";
+
+:root {
+  --rose: #db95a9;
+  --olive: #d0d08f;
+}
