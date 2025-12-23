@@ -1,0 +1,12 @@
+.logo {
+  opacity: 0;
+  transform: translateY(6px) scale(.985);
+  filter: blur(6px);
+  transition: opacity 520ms ease, transform 520ms ease, filter 520ms ease;
+}
+
+.logo.reveal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}

@@ -1,0 +1,24 @@
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 9999;
+  background: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+.scroll-indicator__bar {
+  height: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--rose) 100%, #ff004c),
+    color-mix(in oklab, var(--olive) 100%, #e5ff00)
+  );
+
+  box-shadow: 0 0 16px color-mix(in oklab, var(--rose) 70%, transparent);
+  transition: transform 0.15s ease-out;
+}

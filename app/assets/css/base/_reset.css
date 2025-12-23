@@ -1,0 +1,18 @@
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01" on, "liga" on;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--rose) 45%, white);
+}

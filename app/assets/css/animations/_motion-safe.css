@@ -1,0 +1,14 @@
+.group-hover\:animate-dot-ping {
+  animation: dotPing 1.6s cubic-bezier(0,0,0.2,1) infinite;
+}
+
+.group-hover\:animate-dot-breathe {
+  animation: dotBreathe 1.9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

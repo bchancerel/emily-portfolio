@@ -1,0 +1,53 @@
+.btn-gradient {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  padding: .625rem 1.25rem;
+  font-size: .875rem;
+  font-weight: 500;
+
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  background: rgba(255,255,255,.85);
+
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .25s ease;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--rose) 65%, transparent),
+    color-mix(in oklab, var(--olive) 65%, transparent)
+  );
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gradient__icon {
+  transition: transform .25s ease;
+}
+
+.btn-gradient:hover .btn-gradient__icon {
+  transform: translateX(4px);
+}
