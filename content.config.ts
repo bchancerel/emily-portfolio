@@ -10,6 +10,7 @@ export default defineContentConfig({
         intro: z.string().optional(),
       }),
     }),
+
     about: defineCollection({
       type: 'page',
       source: 'about.md',
@@ -18,6 +19,7 @@ export default defineContentConfig({
         subtitle: z.string().optional(),
       }),
     }),
+
     timeline: defineCollection({
       type: 'data',
       source: 'timeline.yml',
@@ -31,6 +33,26 @@ export default defineContentConfig({
             icon: z.string().optional(),
           })
         ),
+      }),
+    }),
+
+    services: defineCollection({
+      type: 'page',
+      source: 'mes-services/**.md',
+      schema: z.object({
+        title: z.string(),
+        subtitle: z.string().optional(),
+
+        type: z.enum(['landing', 'service']).optional(),
+
+        slug: z.string().optional(),
+        order: z.number().optional(),
+        accent: z.enum(['rose', 'olive', 'ink']).optional(),
+        cta: z.string().optional(),
+
+        excerpt: z.string().optional(),
+        bullets: z.array(z.string()).optional(),
+        closing: z.string().optional(),
       }),
     }),
   },

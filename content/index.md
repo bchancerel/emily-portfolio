@@ -1,5 +1,5 @@
 ---
-title: "/images/logo.svg"
+title: "/images/logo.webp"
 intro: Je vous accompagne pour faire grandir vos projets !
 ---
 
