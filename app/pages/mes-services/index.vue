@@ -3,9 +3,7 @@
         title: string
         slug?: string
         type?: 'landing' | 'service'
-        order?: number
         accent?: 'rose' | 'olive' | 'ink'
-        excerpt?: string
         cta?: string
     }
 
@@ -21,7 +19,6 @@
 
             return all
             .filter((s) => s.type === 'service')
-            .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
         }
     )
 
@@ -55,10 +52,6 @@
                     <p v-if="landing?.subtitle" class="mt-4 text-base text-[var(--ink)]/80 md:text-lg">
                         {{ landing?.subtitle }}
                     </p>
-
-                    <div class="prose mx-auto mt-8 max-w-none md:prose-lg prose-p:text-[var(--ink)]/80 prose-strong:text-[var(--ink)]">
-                        <ContentRenderer v-if="landing" :value="landing" />
-                    </div>
                 </header>
 
                 <div class="mt-14 flex flex-wrap justify-center gap-6">
@@ -80,15 +73,15 @@
                                 {{ service.title }}
                             </h2>
 
-                            <p v-if="service.excerpt" class="mt-3 text-center text-sm text-[var(--ink)]/75">
-                                {{ service.excerpt }}
-                            </p>
-
                             <span class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium group-hover:opacity-80">
                                 {{ service.cta || 'Découvrir' }} <Icon name="heroicons:arrow-right" class="h-4 w-4" />
                             </span>
                         </div>
                     </NuxtLink>
+                </div>
+
+                <div class="prose mx-auto mt-8 max-w-none md:prose-lg prose-p:text-[var(--ink)]/80 prose-strong:text-[var(--ink)]">
+                    <ContentRenderer v-if="landing" :value="landing" />
                 </div>
             </div>
         </section>

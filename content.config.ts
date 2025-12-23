@@ -46,13 +46,9 @@ export default defineContentConfig({
         type: z.enum(['landing', 'service']).optional(),
 
         slug: z.string().optional(),
-        order: z.number().optional(),
         accent: z.enum(['rose', 'olive', 'ink']).optional(),
         cta: z.string().optional(),
 
-        excerpt: z.string().optional(),
-        bullets: z.array(z.string()).optional(),
-        closing: z.string().optional(),
       }),
     }),
   },

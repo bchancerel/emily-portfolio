@@ -48,7 +48,7 @@ body { font-feature-settings: "ss01" on, "liga" on; }
   background-repeat: repeat;
   background-size: 110px 110px;
 
-  opacity: 0.07;
+  opacity: 0.09;
   filter: blur(0.2px);
 
   -webkit-mask-image: radial-gradient(circle at 50% 35%, transparent 0 40%, black 70%);
@@ -216,3 +216,74 @@ body { font-feature-settings: "ss01" on, "liga" on; }
   .service-card::before,
   .service-card::after { transition: none; }
 }
+
+.btn-gradient {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 0.625rem 1.25rem; 
+  font-size: 0.875rem;      
+  font-weight: 500;
+
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--rose) 65%, transparent),
+    color-mix(in oklab, var(--olive) 65%, transparent)
+  );
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gradient__icon {
+  transition: transform .25s ease;
+}
+
+.btn-gradient:hover .btn-gradient__icon {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-gradient,
+  .btn-gradient::before,
+  .btn-gradient__icon {
+    transition: none !important;
+  }
+  .btn-gradient:hover {
+    transform: none;
+  }
+  .btn-gradient:hover .btn-gradient__icon {
+    transform: none;
+  }
+}
+
