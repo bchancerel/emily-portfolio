@@ -1,4 +1,6 @@
 <script setup lang="ts">
+    import { onMounted, ref } from "vue";
+
     const { data: home } = await useAsyncData('home', () =>
         queryCollection('home').path('/').first()
     )
@@ -10,6 +12,22 @@
             fatal: true,
         })
     }
+
+    const runAnim = ref(false);
+    const revealLogo = ref(false);
+    const showAsterisk = ref(true);
+
+    onMounted(() => {
+        runAnim.value = true;
+
+        window.setTimeout(() => {
+            revealLogo.value = true;
+        }, 650);
+
+        window.setTimeout(() => {
+            showAsterisk.value = false;
+        }, 1250);
+    });
 </script>
 
 <template>
@@ -27,13 +45,26 @@
                     </div>
 
 
-                    <img
-                        v-if="home?.title"
-                        :src="home.title"
-                        :alt="`Aperçu ${home.title}`"
-                        class="mx-auto h-26 w-auto max-w-[90%] object-contain"
-                        loading="lazy"
-                    >
+                    <div class="relative mx-auto w-fit max-w-[90%]">
+                        <img
+                            v-if="showAsterisk"
+                            src="/images/asterisk-rose.svg"
+                            alt=""
+                            class="asterisk pointer-events-none absolute left-0 top-1/2 -translate-y-1/2"
+                            :class="{ run: runAnim }"
+                            aria-hidden="true"
+                        >
+
+                        <img
+                            v-if="home?.title"
+                            :src="home.title"
+                            :alt="`Aperçu ${home.title}`"
+                            class="mx-auto h-26 w-auto object-contain logo"
+                            :class="{ reveal: revealLogo }"
+                            loading="lazy"
+                        >
+                    </div>
+
 
                     <p v-if="home?.intro" class="text-base leading-relaxed text-[var(--ink)]/80 md:text-lg">
                         {{ home.intro }}

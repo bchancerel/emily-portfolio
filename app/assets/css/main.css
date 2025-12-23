@@ -287,3 +287,43 @@ body { font-feature-settings: "ss01" on, "liga" on; }
   }
 }
 
+.logo {
+  opacity: 0;
+  transform: translateY(6px) scale(0.985);
+  filter: blur(6px);
+  transition: opacity 520ms ease, transform 520ms ease, filter 520ms ease;
+}
+
+.logo.reveal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.asterisk {
+  width: 42px;             
+  height: 42px;
+  opacity: 1;
+}
+
+.asterisk.run {
+  animation:
+    sweep 1200ms cubic-bezier(.2,.9,.2,1) forwards,
+    spin 1200ms linear forwards,
+    vanish 260ms ease forwards;
+  animation-delay: 0ms, 0ms, 980ms; 
+}
+
+@keyframes sweep {
+  from { transform: translate(-110%, -50%); }
+  to   { transform: translate(220%, -50%); } 
+}
+
+@keyframes spin {
+  from { rotate: 0deg; }
+  to   { rotate: 720deg; }
+}
+
+@keyframes vanish {
+  to { opacity: 0; transform: translate(220%, -50%) scale(.9); }
+}
