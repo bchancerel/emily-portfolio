@@ -51,5 +51,16 @@ export default defineContentConfig({
 
       }),
     }),
+
+    contact: defineCollection({
+      type: 'data',
+      source: 'contact.md',
+      schema: z.object({
+        title: z.string(),
+        subtitle: z.string().optional(),
+        email: z.string().email().optional(),
+        linkedin: z.string().url().optional(),
+      }),
+    }),
   },
 })

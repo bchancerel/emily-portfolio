@@ -31,7 +31,7 @@
             <span class="absolute inset-0 rounded-full bg-white/20 opacity-0 blur transition-opacity duration-300 group-hover:opacity-100"/>
         </NuxtLink>
         <NuxtLink
-            to="#contact"
+            to="/contact"
             class="
                 group
                 relative

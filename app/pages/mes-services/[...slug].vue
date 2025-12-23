@@ -75,7 +75,7 @@
                             Une question ou envie de démarrer ? On en parle.
                         </p>
 
-                        <NuxtLink to="/#contact" class="btn-gradient">
+                        <NuxtLink to="/contact" class="btn-gradient">
                             <span>Contacter</span>
                             <Icon name="heroicons:arrow-right" class="btn-gradient__icon h-4 w-4" />
                         </NuxtLink>
