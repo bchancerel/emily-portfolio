@@ -2,7 +2,7 @@
   opacity: 0;
   transform: translateY(6px) scale(.985);
   filter: blur(6px);
-  transition: opacity 520ms ease, transform 520ms ease, filter 520ms ease;
+  transition: opacity 820ms ease, transform 820ms ease, filter 820ms ease;
 }
 
 .logo.reveal {

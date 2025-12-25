@@ -18,8 +18,8 @@
 
 .asterisk.run {
   animation:
-    sweep 1200ms cubic-bezier(.2,.9,.2,1) forwards,
-    spin 1200ms linear forwards,
-    vanish 260ms ease forwards;
+    sweep 1900ms cubic-bezier(.2,.9,.2,1) forwards,
+    spin 1900ms linear forwards,
+    vanish 760ms ease forwards;
   animation-delay: 0ms, 0ms, 980ms;
 }
