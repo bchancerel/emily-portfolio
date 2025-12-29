@@ -10,3 +10,14 @@
   transform: translateY(0) scale(1);
   filter: blur(0);
 }
+
+.logo-spin {
+  display: inline-block;            
+  animation: logoSpinSlow 10s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.group:hover .logo-spin {
+  animation-duration: 0.8s;  
+}

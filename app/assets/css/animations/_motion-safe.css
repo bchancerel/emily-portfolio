@@ -12,3 +12,10 @@
     transition: none !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-spin,
+  .group:hover .logo-spin {
+    animation: none !important;
+  }
+}

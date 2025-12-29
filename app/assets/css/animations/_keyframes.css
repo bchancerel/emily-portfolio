@@ -23,3 +23,13 @@
 @keyframes vanish {
   to { opacity: 0; transform: translate(220%, -50%) scale(.9); }
 }
+
+@keyframes logoSpinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes logoSpinFast {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

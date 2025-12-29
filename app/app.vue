@@ -21,16 +21,17 @@
 </script>
 
 <template>
-  <div class="min-h-screen bg-paper text-[var(--ink)] flex flex-col relative">
+  <div class="min-h-screen bg-paper text-[var(--ink)] flex flex-col">
+    <AppNavbar />
 
     <div class="scroll-indicator">
       <div class="scroll-indicator__bar" :style="{ transform: `scaleX(${progress})` }" />
     </div>
 
-
     <main class="flex-1">
       <NuxtPage />
     </main>
 
+    <AppFooter />
   </div>
 </template>
