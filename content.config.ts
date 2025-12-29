@@ -138,5 +138,14 @@ export default defineContentConfig({
           .optional(),
       }),
     }),
+
+    mentionsLegales: defineCollection({
+      type: 'page',
+      source: 'mentions-legales.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+      }),
+    }),
   },
 })
