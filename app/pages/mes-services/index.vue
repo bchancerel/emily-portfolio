@@ -38,6 +38,10 @@
         return index % 2 === 0 ? 'asterisk--rose' : 'asterisk--olive'
     }
 
+    useHead({
+        title: 'Emily Market Com | Mes Services',
+    })
+
 </script>
 
 <template>

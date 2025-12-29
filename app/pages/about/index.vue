@@ -13,6 +13,10 @@
     if (!timeline.value) {
         throw createError({ statusCode: 404, statusMessage: 'Timeline content not found', fatal: true })
     }
+
+    useHead({
+        title: 'Emily Market Com | À propos',
+    })
 </script>
 
 <template>

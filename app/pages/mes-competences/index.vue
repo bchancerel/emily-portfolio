@@ -73,6 +73,10 @@
             },
         ];
     });
+
+    useHead({
+        title: 'Emily Market Com | Mes Compétences',
+    })
 </script>
 
 <template>

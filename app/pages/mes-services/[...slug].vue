@@ -28,6 +28,10 @@
 
     const accentClass = (accent?: ServiceItem['accent']) =>
         accent === 'rose' ? 'asterisk--rose' : accent === 'olive' ? 'asterisk--olive' : 'asterisk--ink'
+
+    useHead({
+        title: `${service.value?.title} — Service`,
+    })
 </script>
 
 <template>
