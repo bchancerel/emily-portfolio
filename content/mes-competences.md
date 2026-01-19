@@ -11,12 +11,45 @@ experiences:
   - period: "2021–2023"
     title: "Chargée de communication"
     subtitle: "Eventyr game"
+    description: |
+      - Gestion des réseaux sociaux (planning éditorial, création de contenus, reporting)
+      - Organisation d’événements (logistique, prestataires, com avant/pendant/après)
+      - Création de supports : affiches, flyers, présentations, newsletters
+      - Coordination avec les équipes internes
+
+      **Résultat :** augmentation de la visibilité des événements + meilleure cohérence de marque.
+    images:
+      - "/images/experiences/eventyr-1.jpg"
+      - "/images/experiences/eventyr-2.jpg"
+
   - period: "2023–Auj"
     title: "Freelance"
     subtitle: "Responsable Communication, CM et chargée de projet"
+    description: |
+      - Stratégie de contenu multi-clients (Instagram, LinkedIn, Facebook)
+      - Copywriting & storytelling (posts, pages, newsletters)
+      - Gestion de projet : briefs, planning, priorisation, suivi client
+      - Création de templates + guidelines pour gagner en efficacité
+
+      **Ce que j’aime :** adapter la com à chaque client sans perdre l’ADN.
+    images:
+      - "/images/experiences/freelance-1.jpg"
+      - "/images/experiences/freelance-2.jpg"
+      - "/images/experiences/freelance-3.jpg"
+
   - period: "2025–Auj"
     title: "Social Media Manager"
     subtitle: "Otta Agency"
+    description: |
+      - Gestion de comptes & campagnes (organique + sponsorisé)
+      - Analyse performance (KPIs, tops/flops, recommandations)
+      - Création de contenus : carrousels, scripts vidéo, concepts de série
+      - Collaboration avec créa/ads pour itérer rapidement
+
+      **Objectif :** des contenus qui performent sans devenir cringe.
+    images:
+      - "/images/experiences/otta-1.jpg"
+      - "/images/experiences/otta-2.jpg"
 
 diplomas:
   - period: "2018–2021"
