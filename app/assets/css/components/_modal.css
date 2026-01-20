@@ -20,7 +20,7 @@
   width: min(820px, calc(100vw - 2rem));
   border-radius: 28px;
   border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
-  background: color-mix(in oklab, white 86%, transparent);
+  background: color-mix(in oklab, white 100%, transparent);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.18);
   overflow: hidden;
   transform-origin: center;
