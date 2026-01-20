@@ -3,13 +3,14 @@ title: "Et si on apprenait à se connaître ?"
 subtitle: "Moi, c'est Emily."
 ---
 
-Moi, c'est **Emily**, une jeune autodidacte qui aime découvrir de nouvelles choses.  
-J'ai toujours eu une grande soif de savoir et une passion pour explorer de nouveaux sujets.
+Moi, c'est **Emily**. Autodidacte dans l'âme, curieuse par nature, toujours en quête de nouvelles choses à apprendre et à explorer. 
+J'ai cette soif permanente de comprendre, tester, expérimenter... bref, ne jamais stagner.
 
-Mes expériences passées à déménager souvent et à voyager m'ont aidée à m'habituer rapidement à de nouveaux environnements.
+Avoir souvent déménagé et voyagé m'a appris une chose essentielle : **m'adapter vite et bien**. Nouvel environnement, 
+nouvelles personnes, nouveaux défis ? Aucun problème, je m'ajuste et j'avance.
 
-J'ai toujours été plutôt leader dans l'âme, aimant proposer des idées et travailler en équipe de manière efficace.
+Naturellement à l'aise en équipe, j'ai un vrai **esprit leader** : proposer des idées, fédérer, faire avancer les projets ensemble, 
+dans une dynamique efficace et positive. Et face à l'inconnu, pas de blocage — j'apprends, je progresse et je monte en compétences.
 
-Et quand je me retrouve face à quelque chose que je ne connais pas, je suis toujours prête à apprendre et à m'améliorer.
-
-Pour résumer, je suis une personne jeune et dynamique, passionnée, curieuse et capable de m'adapter facilement, constamment à la recherche de nouvelles opportunités pour grandir et avoir un impact positif !
+En résumé : une personnalité **dynamique, engagée et adaptable**, animée par l'envie de grandir, 
+de créer de l'impact et de saisir chaque opportunité comme un terrain d'apprentissage
