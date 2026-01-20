@@ -3,7 +3,7 @@
         title?: string;
         hero?: { badge?: string; heading?: string };
         seo?: { description?: string };
-        experiences?: Array<{ period: string; title: string; subtitle: string; description?: string; images?: string[]; }>;
+        experiences?: Array<{ period: string; title: string; subtitle: string; description?: string; links?: string[]; }>;
         diplomas?: Array<{ period: string; title: string; subtitle: string; school: string }>;
         skills?: { software?: string[]; tools?: string[] };
         languages?: Array<{ name: string; level: string }>;
@@ -37,7 +37,7 @@
                     title: e.title,
                     subtitle: e.subtitle,
                     description: e.description,
-                    images: e.images ?? [],
+                    links: e.links ?? [],
                     kind: "experience",
                 })),
             },

@@ -10,7 +10,7 @@
         title: string;
         subtitle?: string;
         description?: string;
-        images: string[];
+        links?: string[];
     };
 
     type DefaultItem =
@@ -130,7 +130,7 @@
                                         <p v-if="(it as any).sub" class="text-sm text-[var(--ink)]/70">
                                             {{ (it as any).sub }}
                                         </p>
-                                        <p class="mt-1 text-xs text-[var(--ink)]/50">
+                                        <p class="mt-1 text-xs text-[var(--ink)]">
                                             Cliquer pour voir le détail
                                         </p>
                                     </div>
@@ -199,28 +199,37 @@
                     </div>
 
                     <div class="modal-body">
-                        <p
+                        <article
                             v-if="activeExperience.description"
-                            class="whitespace-pre-line text-sm md:text-[15px] leading-relaxed text-[var(--ink)]/85"
+                            class="prose max-w-none md:prose-lg
+                            prose-p:text-[var(--ink)]/80
+                            prose-strong:text-[var(--ink)]
+                            prose-strong:mt-0
+                            prose-ul:pl-5
+                            prose-li:marker:text-[var(--rose)]
+                            prose-li:text-[var(--ink)]/80
+                            prose-a:text-[var(--ink)]
+                            prose-a:no-underline hover:prose-a:underline"
                         >
-                            {{ activeExperience.description }}
-                        </p>
+                            <MDC :value="activeExperience.description" />
+                        </article>
 
-                        <div v-if="activeExperience.images?.length" class="mt-5 grid gap-3 sm:grid-cols-2">
-                            <figure
-                                v-for="(src, i) in activeExperience.images"
-                                :key="src + i"
-                                class="overflow-hidden rounded-2xl border border-black/10 bg-black/5"
+                        <div v-if="activeExperience.links?.length" class="mt-5 grid gap-3 sm:grid-cols-2">
+                            <a
+                                v-for="(link, i) in activeExperience.links"
+                                :key="i"
+                                :href="link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block w-full text-center btn-gradient"
                             >
-                                <img
-                                    :src="src"
-                                    :alt="`${activeExperience.title} — visuel ${i + 1}`"
-                                    class="h-48 w-full object-cover"
-                                    loading="lazy"
-                                >
-                            </figure>
+                                <span class="btn-gradient__text">
+                                    En voir plus ...
+                                </span>
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </Transition>

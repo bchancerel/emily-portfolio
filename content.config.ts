@@ -89,7 +89,7 @@ export default defineContentConfig({
               title: z.string(),
               subtitle: z.string().optional(),
               description: z.string().optional(),
-              images: z.array(z.string()).optional(),
+              links: z.array(z.string()).optional(),
             })
           )
           .optional(),
