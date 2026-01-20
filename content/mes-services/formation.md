@@ -2,7 +2,7 @@
 type: service
 slug: formation
 title: Formation
-accent: olive
+accent: rose
 cta: Découvrir
 ---
 

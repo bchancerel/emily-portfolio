@@ -3,7 +3,7 @@
         title?: string;
         hero?: { badge?: string; heading?: string };
         seo?: { description?: string };
-        experiences?: Array<{ period: string; title: string; subtitle: string }>;
+        experiences?: Array<{ period: string; title: string; subtitle: string; description?: string; links?: string[]; }>;
         diplomas?: Array<{ period: string; title: string; subtitle: string; school: string }>;
         skills?: { software?: string[]; tools?: string[] };
         languages?: Array<{ name: string; level: string }>;
@@ -30,9 +30,15 @@
             {
                 key: "experiences",
                 title: "Expériences",
-                items: (p.experiences ?? []).map((e: { period: string; title: string; subtitle: string }) => ({
+                items: (p.experiences ?? []).map((e) => ({
                     label: `${e.period} — ${e.title}`,
                     sub: e.subtitle,
+                    period: e.period,
+                    title: e.title,
+                    subtitle: e.subtitle,
+                    description: e.description,
+                    links: e.links ?? [],
+                    kind: "experience",
                 })),
             },
             {

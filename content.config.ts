@@ -88,6 +88,8 @@ export default defineContentConfig({
               period: z.string(),
               title: z.string(),
               subtitle: z.string().optional(),
+              description: z.string().optional(),
+              links: z.array(z.string()).optional(),
             })
           )
           .optional(),
