@@ -32,6 +32,37 @@
 
     const max = computed(() => Math.max(0, props.slides.length - 1));
 
+    function parseSkill(str: string) {
+        const [kindRaw, nameRaw] = str.split("—").map((s) => s.trim());
+        const kind = (kindRaw ?? "").toLowerCase();
+        const name = nameRaw ?? str;
+
+        return { kind, name };
+    }
+
+    function skillIcon(name: string) {
+        const key = name.toLowerCase();
+
+        // Adobe
+        if (key === "ps") return "simple-icons:adobephotoshop";
+        if (key === "ai") return "simple-icons:adobeillustrator";
+        if (key === "id") return "simple-icons:adobeindesign";
+        if (key === "xd") return "simple-icons:adobexd";
+        if (key === "pr") return "simple-icons:adobepremierepro";
+
+        // Tools
+        if (key.includes("microsoft office")) return "simple-icons:microsoftoffice";
+        if (key.includes("mailchimp")) return "simple-icons:mailchimp";
+        if (key.includes("brevo")) return "heroicons:envelope"; // fallback safe
+
+        return "heroicons:sparkles";
+    }
+
+    function isSkillString(str: string) {
+        return str.startsWith("Logiciel —") || str.startsWith("Outil —");
+    }
+
+
     function prev() {
         index.value = index.value <= 0 ? max.value : index.value - 1;
     }
@@ -139,7 +170,7 @@
 
                             <template v-else>
                                 <div class="service-card__content flex gap-3">
-                                    <span class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
+                                    <span v-if="!(typeof it === 'string' && isSkillString(it))" class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
                                         <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-ping" aria-hidden="true"/>
                                         <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-breathe" aria-hidden="true" />
                                         <span class="relative h-2.5 w-2.5 rounded-full bg-[var(--rose)]" aria-hidden="true" />
@@ -147,9 +178,29 @@
 
                                     <div class="min-w-0">
                                         <template v-if="typeof it === 'string'">
-                                            <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
-                                                {{ it }}
-                                            </p>
+                                            <template v-if="isSkillString(it)">
+                                                <div class="flex items-center gap-3">
+                                                    <span class="grid h-9 w-9 place-items-center rounded-2xl border border-black/10 bg-black/5">
+                                                        <span class="grid h-7 w-7 place-items-center rounded-xl bg-white">
+                                                            <Icon :name="skillIcon(parseSkill(it).name)" class="h-4 w-4 text-[var(--rose)]/80" />
+                                                        </span>
+                                                    </span>
+
+                                                    <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
+                                                        <span class="font-medium">
+                                                            {{ parseSkill(it).kind === "logiciel" ? "Logiciel" : "Outil" }}
+                                                        </span>
+                                                        <span class="text-[var(--ink)]/50"> — </span>
+                                                        <span>{{ parseSkill(it).name }}</span>
+                                                    </p>
+                                                </div>
+                                            </template>
+
+                                            <template v-else>
+                                                <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
+                                                    {{ it }}
+                                                </p>
+                                            </template>
                                         </template>
 
                                         <template v-else>
