@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Emily Market Com',
       meta: [
-        { name: 'description', content: 'Portfolio de développeur front-end' },
+        { name: 'description', content: 'Portfolio Social Média manager' },
       ],
     },
   },
