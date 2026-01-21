@@ -51,13 +51,14 @@
                     </span>
                 </div>
 
-                <header class="relative mt-10 overflow-hidden rounded-3xl border border-black/10 bg-white p-8 md:p-10 shadow-[0_12px_30px_rgba(0,0,0,.06)]"> 
-                    <div class="pointer-events-none absolute -right-10 -top-10"> 
-                        <div class="asterisk-mask h-56 w-56" :class="accentClass(service.accent)" /> 
-                    </div> 
-                    <h1 class="max-w-3xl text-3xl font-semibold leading-tight md:text-5xl"> 
-                        {{ service.title }} 
-                    </h1> 
+                <header class="relative mt-10 overflow-hidden rounded-3xl border border-black/10 bg-white p-6 sm:p-8 md:p-10 shadow-[0_12px_30px_rgba(0,0,0,.06)]">
+                    <div class="pointer-events-none absolute -right-16 -top-16 sm:-right-12 sm:-top-12 md:-right-10 md:-top-10 opacity-70">
+                        <div class="asterisk-mask h-32 w-32 sm:h-44 sm:w-44 md:h-56 md:w-56" :class="accentClass(service.accent)"/>
+                    </div>
+
+                    <h1 class="max-w-3xl pr-10 sm:pr-16 md:pr-0 text-3xl font-semibold leading-tight md:text-5xl">
+                        {{ service.title }}
+                    </h1>
                 </header>
 
                 <article
