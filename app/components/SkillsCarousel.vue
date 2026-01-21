@@ -141,90 +141,98 @@
                     </header>
 
                     <ul class="grid gap-3 md:grid-cols-2">
-                        <li v-for="(it, j) in s.items" :key="j" class="service-card group">
+                        <li v-for="(it, j) in s.items" :key="j">
+                            <!-- expériences -->
                             <template v-if="typeof it !== 'string' && (it as any).kind === 'experience'">
                                 <button
                                     type="button"
-                                    class="service-card__content w-full text-left flex gap-3"
+                                    class="service-card group w-full text-left"
                                     @click="openExperience(it as any)"
                                 >
-                                    <span class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
-                                        <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-ping" aria-hidden="true"/>
-                                        <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-breathe" aria-hidden="true" />
-                                        <span class="relative h-2.5 w-2.5 rounded-full bg-[var(--rose)]" aria-hidden="true" />
-                                    </span>
-
-                                    <div class="min-w-0">
-                                        <p class="text-sm md:text-[15px] font-medium text-[var(--ink)]">
-                                            {{ (it as any).label }}
-                                        </p>
-                                        <p v-if="(it as any).sub" class="text-sm text-[var(--ink)]/70">
-                                            {{ (it as any).sub }}
-                                        </p>
-                                        <p class="mt-1 text-xs text-[var(--ink)]">
-                                            Cliquer pour voir le détail
-                                        </p>
+                                    <div class="service-card_content flex w-full gap-3">
+                                        <span class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
+                                            <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-ping" aria-hidden="true"/>
+                                            <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-breathe" aria-hidden="true" />
+                                            <span class="relative h-2.5 w-2.5 rounded-full bg-[var(--rose)]" aria-hidden="true" />
+                                        </span>
+    
+                                        <div class="min-w-0">
+                                            <p class="text-sm md:text-[15px] font-medium text-[var(--ink)]">
+                                                {{ (it as any).label }}
+                                            </p>
+                                            <p v-if="(it as any).sub" class="text-sm text-[var(--ink)]/70">
+                                                {{ (it as any).sub }}
+                                            </p>
+                                            <p class="mt-1 text-xs text-[var(--ink)]">
+                                                Cliquer pour voir le détail
+                                            </p>
+                                        </div>
                                     </div>
                                 </button>
                             </template>
 
+                            <!-- autres compétences -->
                             <template v-else>
-                                <div class="service-card__content flex gap-3">
-                                    <span v-if="!(typeof it === 'string' && isSkillString(it))" class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
-                                        <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-ping" aria-hidden="true"/>
-                                        <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-breathe" aria-hidden="true" />
-                                        <span class="relative h-2.5 w-2.5 rounded-full bg-[var(--rose)]" aria-hidden="true" />
-                                    </span>
-
-                                    <div class="min-w-0">
-                                        <template v-if="typeof it === 'string'">
-                                            <template v-if="isSkillString(it)">
-                                                <div class="flex items-center gap-3">
-                                                    <span class="grid h-9 w-9 place-items-center rounded-2xl border border-black/10 bg-black/5">
-                                                        <span class="grid h-7 w-7 place-items-center rounded-xl bg-white">
-                                                            <Icon :name="skillIcon(parseSkill(it).name)" class="h-4 w-4 text-[var(--rose)]/80" />
+                                <div class="service-card group">
+                                    <div class="service-card__content flex gap-3">
+                                        <span v-if="!(typeof it === 'string' && isSkillString(it))" class="relative mt-1.5 flex h-2.5 w-2.5 shrink-0">
+                                            <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-ping" aria-hidden="true"/>
+                                            <span class="absolute inset-0 rounded-full bg-[var(--rose)] opacity-0 group-hover:animate-dot-breathe" aria-hidden="true" />
+                                            <span class="relative h-2.5 w-2.5 rounded-full bg-[var(--rose)]" aria-hidden="true" />
+                                        </span>
+    
+                                        <div class="min-w-0">
+                                            <!-- logiciel / outil -->
+                                            <template v-if="typeof it === 'string'">
+                                                <template v-if="isSkillString(it)">
+                                                    <div class="flex items-center gap-3">
+                                                        <span class="grid h-9 w-9 place-items-center rounded-2xl border border-black/10 bg-black/5">
+                                                            <span class="grid h-7 w-7 place-items-center rounded-xl bg-white">
+                                                                <Icon :name="skillIcon(parseSkill(it).name)" class="h-4 w-4 text-[var(--rose)]/80" />
+                                                            </span>
                                                         </span>
-                                                    </span>
-
+    
+                                                        <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
+                                                            <span class="font-medium">
+                                                                {{ parseSkill(it).kind === "logiciel" ? "Logiciel" : "Outil" }}
+                                                            </span>
+                                                            <span class="text-[var(--ink)]/50"> — </span>
+                                                            <span>{{ parseSkill(it).name }}</span>
+                                                        </p>
+                                                    </div>
+                                                </template>
+    
+                                                <template v-else>
                                                     <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
-                                                        <span class="font-medium">
-                                                            {{ parseSkill(it).kind === "logiciel" ? "Logiciel" : "Outil" }}
-                                                        </span>
-                                                        <span class="text-[var(--ink)]/50"> — </span>
-                                                        <span>{{ parseSkill(it).name }}</span>
+                                                        {{ it }}
                                                     </p>
-                                                </div>
+                                                </template>
                                             </template>
-
+    
+                                            <!-- objet avec label/sub/meta -->
                                             <template v-else>
-                                                <p class="text-sm md:text-[15px] text-[var(--ink)]/85">
-                                                    {{ it }}
+                                                <p class="text-sm md:text-[15px] font-medium text-[var(--ink)]">
+                                                    {{ it.label }}
+                                                </p>
+                                                <p v-if="it.sub" class="text-sm text-[var(--ink)]/70">
+                                                    {{ it.sub }}
+                                                </p>
+                                                <p v-if="typeof it === 'object' && 'meta' in it && it.meta" class="text-xs text-[var(--ink)]/60">
+                                                    {{ it.meta }}
                                                 </p>
                                             </template>
-                                        </template>
-
-                                        <template v-else>
-                                            <p class="text-sm md:text-[15px] font-medium text-[var(--ink)]">
-                                                {{ it.label }}
-                                            </p>
-                                            <p v-if="it.sub" class="text-sm text-[var(--ink)]/70">
-                                                {{ it.sub }}
-                                            </p>
-                                            <p v-if="typeof it === 'object' && 'meta' in it && it.meta" class="text-xs text-[var(--ink)]/60">
-                                                {{ it.meta }}
-                                            </p>
-                                        </template>
+                                        </div>
                                     </div>
                                 </div>
                             </template>
                         </li>
-
                     </ul>
                 </section>
             </div>
         </div>
     </div>
 
+    <!-- modal expérience -->
     <Teleport to="body">
         <Transition name="modal">
             <div v-if="activeExperience"  class="modal-overlay" aria-modal="true" role="dialog">
