@@ -22,7 +22,7 @@
 <template>
     <main class="min-h-screen bg-paper text-[var(--ink)] relative">
         <section class="mx-auto max-w-6xl px-6 py-12 md:py-20">
-            <div class="card p-7 md:p-12">
+            <div class="card p-3 md:p-12">
 
                 <header class="mx-auto max-w-3xl text-center">
                     <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-sm">
